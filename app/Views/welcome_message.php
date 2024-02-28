@@ -80,7 +80,7 @@
         <!-- Menambahkan Image di sebelah kanan untuk deskop -->
         <div class="w-full self-end px-4">
         <div class="mt-10">
-            <img sec="" alt="">
+            <img src="" alt="">
         </div>
         </div>
     </div>
