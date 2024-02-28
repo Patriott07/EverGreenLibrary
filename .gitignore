@@ -1,3 +1,4 @@
+
 #-------------------------
 # Operating Specific Junk Files
 #-------------------------
@@ -126,3 +127,4 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+node_modules
