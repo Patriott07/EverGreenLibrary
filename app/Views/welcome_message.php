@@ -8,10 +8,11 @@
 </head>
 <body>
   
-
+<!-- Start Navbar -->
 <nav class="bg-white border-gray-200 dark:bg-emerald-800">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <!-- Logo di navbar beserta slogan brand -->
       <!-- <img src="#" class="h-8" alt="#" /> -->
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">#</span>
   </a>
@@ -61,7 +62,10 @@
     </div>
   </div>
 </nav>
+<!-- End Navbar -->
 
+
+<!-- Start Section -->
 <section id="home" class="p-10 mx-8">
     <div class="container">
         <div class="flex flex-wrap">
@@ -72,6 +76,12 @@
 
                 <a href="#" class="text-base self-start py-3 px-4  text-white bg-emerald-600 font-semibold rounded-full hover:shadow-lg hover:bg-emerald-400">Jelajahi sekarang</a>
             </div>
+        </div>
+        <!-- Menambahkan Image di sebelah kanan untuk deskop -->
+        <div class="w-full self-end px-4">
+        <div class="mt-10">
+            <img sec="" alt="">
+        </div>
         </div>
     </div>
 </section>
