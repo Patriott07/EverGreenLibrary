@@ -8,7 +8,6 @@
 <!-- Test logo -->
 <?= view('./component/NavbarWithLogo-bs')?>
 
-
 <!-- Start Navbar -->
 <nav class="bg-white border-gray-200 dark:bg-emerald-800">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
