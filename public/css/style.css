@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter'. sans-serif;
+}
+
+.hamburger-active {
+
+}
+
+.hamburger-active > span=nth-child(1) {
+    @apply origin-top-left rotate-45;
+}
