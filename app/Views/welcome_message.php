@@ -1,13 +1,14 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link  rel="stylesheet" href="css/app.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  
+<!-- 
+  Halaman ini dibuat menggunakan tailwind
+ -->
+
+<!-- merender Header-tw.php -->
+<?= view('./component/header-tw') ?>
+
+<!-- Test logo -->
+<?= view('./component/NavbarWithLogo-bs')?>
+
+
 <!-- Start Navbar -->
 <nav class="bg-white border-gray-200 dark:bg-emerald-800">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -85,5 +86,6 @@
         </div>
     </div>
 </section>
-</body>
-</html>
+
+<!-- merender footer-tw.php -->
+<?= view('./component/footer-tw') ?>
