@@ -1,18 +1,70 @@
-footer{
+footer {
     padding: 30px 0px;
 }
 
-.link-header{
+.link-header {
     font-size: 15px;
     color: rgb(159, 159, 159);
 }
 
-a{
+a {
     font-size: 14px;
-    color: #2F2F2F!important;
+    color: #2F2F2F !important;
 }
 
-.n{
+.n {
     font-size: 18px;
 }
 
+.gray {
+    color: rgb(159, 159, 159);
+
+}
+
+.fs14 {
+    font-size: 14px;
+}
+
+.box-qoute {
+    position: absolute;
+    top: -30%;
+    left: 20%;
+    padding: 30px 50px;
+    background: #7EE081;
+    color: #2f2f2f;
+    border-radius: 20px;
+    font-size: 18px;
+    max-width: 50vw;
+}
+
+.ff2 {
+    font-family: "Kalam", cursive;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.button-icon{
+    width: fit-content;
+    padding: 8px 12px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid black;
+    transition: all 0.3s 0.2s;
+}
+
+.button-icon:hover{
+    background-color: #5aff5f;
+    opacity: 0.8;
+}
+
+.gap-footer{
+    margin-bottom: 200px;
+}
+*{
+    text-decoration: none!important;
+}
+.button-icon .text{
+    font-weight: 450;
+    text-decoration: none!important;
+
+}

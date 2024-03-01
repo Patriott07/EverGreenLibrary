@@ -77,6 +77,7 @@ class Routing extends BaseRouting
      * Example:
      *  public $override404 = 'App\Errors::show404';
      */
+    // TODO membuat 404 custom page
     public ?string $override404 = null;
 
     /**

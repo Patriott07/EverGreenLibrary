@@ -7,24 +7,49 @@
  */
 ?>
 
-<footer class="mt-4">
-    <hr>
-    <div class="container mt-4 d-flex justify-content-between">
-        <div class="col-5">
+<footer class="mt-4 container position-relative">
+    <!-- Qoute -->
+
+    <div class="box-qoute">
+        <div class="mb-3">
             <img src="<?= base_url('./image/logo-large.png') ?>" alt="">
-            <p class="link-header">
-                @2024
-            </p>
-            <p class="n">
-                EverGreen adalah platform library online yang dapat dinikmati segala kalangan usia.
-                <br><br>
-                Evergreen Hadir untuk indonesia yang lebih baik!
-            </p>
-            <br><br>
-            <p class="link-header">Develop by :</p>
-            <p class="link-header">
-                Patriott07 | ryunex 15 | jipyy | Rismawati | Nazwaa
-            </p>
+        </div>
+        <div class="text">
+            `` Semakin banyak aku membaca. semakin banyak aku berpikir. semakin aku belajar. semakin sadar bahwa aku. tak mengetahui apapun ``.
+        </div>
+        <div class="fs14 mt-3">
+            ~ Evergeen
+        </div>
+    </div>
+
+    <!-- content footer -->
+    <hr>
+    <div class="my-5 d-flex pt-4 justify-content-between">
+        <div class="col-5 d-flex justify-content-center">
+            <div class="col-9 text-center">
+                <img src="<?= base_url('./image/logo-large.png') ?>" alt="">
+                <div class="text-center gray fs14 mt-3">
+                    Evergreen adalah platform library berbasis web. kami memudahkan anda yang suka membaca. hadir untuk indonesia maju!
+                </div>
+                <div class="mt-4 justify-content-around d-flex align-items-center">
+                    <div class="fw-bold">Social :</div> 
+                    <div>
+                        <img src="<?= base_url('./image/icon/facebook.png') ?>" alt="">
+                    </div>
+                    <div>
+                        <img src="<?= base_url('./image/icon/twitter.png') ?>" alt="">  
+                    </div>
+                    <div>
+                        <img src="<?= base_url('./image/icon/instagram.png') ?>" alt="">
+                    </div>
+                    <div>
+                        <img src="<?= base_url('./image/icon/youtube.png') ?>" alt="">            
+                    </div>
+                    <div>
+                        <img src="<?= base_url('./image/icon/bi_github.png') ?>" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col offset-md-1">
             <p class="link-header">Navigate</p>
@@ -87,9 +112,10 @@
             </p>
         </div>
     </div>
-    <div class="container mt-5 pt-3">
-        <div class="text-center">
-            <!-- Icon github -->
+    <hr>
+    <div class="text-center">
+        <div class="fs14 gray">
+            @copyright 2024 All rights reserved | develop by : Patriott07 ryunex15 jipyy rrismawati nazwaa
         </div>
     </div>
 </footer>
