@@ -75,13 +75,16 @@
     padding: 8px 12px;
     background-color: #fff;
     border-radius: 15px;
-    border: 1px solid black;
+    color:  rgb(156, 154, 154);
+    border: 1px solid rgb(156, 154, 154);
     transition: all 0.3s 0.2s;
 }
 
 
 .button-icon:hover{
-    opacity: 0.8;
+    border: 1px solid rgb(156, 154, 154);
+    opacity: 0.7;
+    padding: 8px 16px;
 
 }
 
@@ -96,3 +99,57 @@
 .w-fit-c{
     width: fit-content;
 }
+
+label{
+    font-size: 14px;
+    position: relative;
+}
+
+label:active::before{
+    content: " > ";
+    font-size: 14px;
+}
+
+input{
+    height: 45px;
+    max-width: 415px;
+    border-radius: 20px!important;
+    padding: 20px!important;
+    color: rgb(142, 142, 142)!important;
+    transition: all 0.4s!important;
+    background-color: #fff;
+}
+
+input:focus{
+    color: #2f2f2f!important;
+    margin-left: 5px!important;
+    outline: none!important; 
+    max-width: 435px;
+    box-shadow: 6px 8px 6px rgba(147, 147, 147, 0.285)!important;
+    font-size: 14px!important;
+    
+}
+
+.a-dash a{
+    position: relative;
+    color: #4AD34F!important;
+    transition: all 0.3s 0.1s;
+    font-size: 18px;
+    margin: 0px 3px;
+}
+
+.a-dash a::before{
+    content: "";
+    transition: all 0.3s 0.1s;
+    width: 40%;
+    height: 2px;
+    background-color: #4AD34F;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.a-dash a:hover::before{
+    content: "";
+    width: 0%;
+}
+

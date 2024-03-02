@@ -18,11 +18,15 @@ use App\Controllers\Home;
 $routes->get('/', [Home::class, 'index']);
 
 $routes->get('/auth', [AuthController::class, 'index']);
+$routes->get('/signup', [AuthController::class, 'registrasipage']);
 
 /**
  * End 
  * */
 
+
+
+ 
 /**
  * Route logic system POST | PUT | DELETE
  */

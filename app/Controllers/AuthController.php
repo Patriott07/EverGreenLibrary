@@ -24,4 +24,8 @@ class AuthController extends BaseController
         dd($this->lib_auth->hashToText($hash));
         // dd(textToHash());
     }
+
+    public function registrasipage(){
+        return view('Regispage');
+    }
 }
