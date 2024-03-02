@@ -19,6 +19,7 @@ $routes->get('/', [Home::class, 'index']);
 
 $routes->get('/auth', [AuthController::class, 'index']);
 $routes->get('/signup', [AuthController::class, 'registrasipage']);
+$routes->get('/signin', [AuthController::class, 'loginpage']);
 
 /**
  * End 
@@ -31,7 +32,7 @@ $routes->get('/signup', [AuthController::class, 'registrasipage']);
  * Route logic system POST | PUT | DELETE
  */
 
-$routes->post('path', [AuthController::class, 'post']);
+$routes->post('/auth/register', [AuthController::class, 'register']);
 
 /**
  * End 

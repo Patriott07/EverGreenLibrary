@@ -110,7 +110,7 @@ label:active::before{
     font-size: 14px;
 }
 
-input{
+input.form-control{
     height: 45px;
     max-width: 415px;
     border-radius: 20px!important;
@@ -120,7 +120,7 @@ input{
     background-color: #fff;
 }
 
-input:focus{
+input.form-control:focus{
     color: #2f2f2f!important;
     margin-left: 5px!important;
     outline: none!important; 
@@ -138,6 +138,10 @@ input:focus{
     margin: 0px 3px;
 }
 
+.a-dash a:hover{
+    color: rgb(181, 181, 181)!important;
+}
+
 .a-dash a::before{
     content: "";
     transition: all 0.3s 0.1s;
@@ -153,3 +157,26 @@ input:focus{
     width: 0%;
 }
 
+.err-form-chip{
+    margin-right: 4px;
+    margin-bottom: 4px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 6px 10px;
+    color: #2f2f2f;
+    background-color: #FE7B7B;
+    width: fit-content;
+}
+
+.suc-form-chip{
+    margin-right: 4px;
+    margin-bottom: 4px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 6px 10px;
+    color: #2f2f2f;
+    background-color: #4AD34F;
+    width: fit-content;
+}
+
+/* input checkbox */

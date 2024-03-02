@@ -15,24 +15,60 @@
                 EverGreen Library
             </div>
 
-            <form action="" class="my-3 col-md-8" method="post">
+            <!-- init to get error validation -->
+            <?php validation_list_errors() ?>
+
+            <?php if (isset($err)) { ?>
+                <div class="d-flex flex-wrap">
+                    <!-- err chip -->
+                    <?php foreach ($err as $i_err) { ?>
+                        <div class="err-form-chip">
+                            <div class="d-flex justify-content-around align-items-center fs14">
+                                <img src="<?= base_url('./image/icon/error.png') ?>" alt="">
+                                <div class="text fs14 ms-2">
+                                    <?= $i_err ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+
+            <!-- Jika sukses -->
+            <?php if (isset($suc)) { ?>
+                <div class="d-flex flex-wrap">
+                    <!-- suc chip -->
+                    <div class="suc-form-chip">
+                        <div class="d-flex justify-content-around align-items-center fs14">
+                            <img src="<?= base_url('./image/icon/success.png') ?>" alt="">
+                            <div class="text fs14 ms-2">
+                                <?= $suc ?>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <form action="/auth/register" class="my-3 col-md-8" method="post">
+                <?= csrf_field() ?>
                 <div class="mb-3">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" class="form-control">
+                    <label for="name">Username</label>
+                    <input type="text" id="name" name="name" class="form-control" value="<?= isset($input) ? $input['name'] : '' ?>">
                 </div>
                 <div class="mb-3">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control">
+                    <input type="email" id="email" name="email" class="form-control" value="<?= isset($input) ? $input['email'] : '' ?>">
                 </div>
                 <div class="mb-3">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control">
+                    <input type="password" id="password" name="password" class="form-control" value="<?= isset($input) ? $input['password'] : '' ?>">
                 </div>
                 <div class="mb-3">
                     <label for="confirmpassword">Confirm Password</label>
-                    <input type="password" id="confirmpassword" name="confirmpassword" class="form-control">
+                    <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" value="<?= isset($input) ? $input['confirmpassword'] : '' ?>">
                 </div>
-                
+
                 <div class="mb-3 a-dash d-flex justify-content-between align-items-center">
                     <button type="submit" class="button-icon d-flex justify-content-between gap-2 align-items-center">
                         <div class="text ff1">
@@ -46,6 +82,14 @@
                         I have account <a href="/signin">Login</a>
                     </span>
                 </div>
+
+                <div class="form-check">
+                    <input style="background-color: #7EE081!important; width:20px!important; height: 20px!important" class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault" required>
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Iam ready and Aggre userAssigment
+                    </label>
+                </div>
+
 
 
 
