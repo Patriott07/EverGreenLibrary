@@ -1,0 +1,98 @@
+/* 
+    // File css wajib disetiap page
+    ----
+    //
+    // Isinya class-class yang reusable
+    // untuk menggunakannya cukup berikan class yang sesuai
+    //
+*/
+
+*{
+    text-decoration: none!important;
+}
+
+/* ff = font family */
+.ff1{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
+.ff2 {
+    font-family: "Kalam", cursive;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Fs = font size */
+.fs14 {
+    font-size: 14px;
+}
+
+.fs18 {
+    font-size: 18px;
+}
+
+.fs24{
+    font-size: 24px;
+}
+
+.fs32 {
+    font-size: 32px;
+}
+
+.fs40 {
+    font-size: 40px;
+}
+
+.fs80{
+    font-size: 80px;
+}
+
+.fs120{
+    font-size: 120px;
+}
+
+/* Font weight */
+.fw-n{
+    font-weight: 400;
+}
+.fw-m{
+    font-weight: 500;
+}
+.fw-b{
+    font-weight: 700;
+}
+
+
+/* Button style sndiri */
+
+.button-icon{
+    position: relative;
+    width: fit-content;
+    padding: 8px 12px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid black;
+    transition: all 0.3s 0.2s;
+}
+
+
+.button-icon:hover{
+    opacity: 0.8;
+
+}
+
+/* gap footer */
+
+.gap-footer{
+    margin-bottom: 200px;
+}
+
+/* width fit content */
+
+.w-fit-c{
+    width: fit-content;
+}

@@ -19,6 +19,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- footer.css | local -->
+  <link rel="stylesheet" href="<?= base_url('./css/global.css') ?>">
   <link rel="stylesheet" href="<?= base_url('./css/footer.css')?>">
 
   <!-- title -->

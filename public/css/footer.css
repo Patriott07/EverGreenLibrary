@@ -12,17 +12,9 @@ a {
     color: #2F2F2F !important;
 }
 
-.n {
-    font-size: 18px;
-}
-
 .gray {
     color: rgb(159, 159, 159);
 
-}
-
-.fs14 {
-    font-size: 14px;
 }
 
 .box-qoute {
@@ -33,38 +25,27 @@ a {
     background: #7EE081;
     color: #2f2f2f;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 14px;
     max-width: 50vw;
-}
-
-.ff2 {
-    font-family: "Kalam", cursive;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.button-icon{
-    width: fit-content;
-    padding: 8px 12px;
-    background-color: #fff;
-    border-radius: 15px;
-    border: 1px solid black;
     transition: all 0.3s 0.2s;
 }
 
-.button-icon:hover{
-    background-color: #5aff5f;
-    opacity: 0.8;
+.box-qoute:hover{
+    max-width: 60vw;
+    padding: 30px 90px 30px 70px;
+    opacity: 0.9;
 }
 
-.gap-footer{
-    margin-bottom: 200px;
-}
-*{
-    text-decoration: none!important;
-}
+
 .button-icon .text{
     font-weight: 450;
     text-decoration: none!important;
+}
 
+.box-green{
+    clip-path: polygon(21% 0, 78% 0, 100% 23%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0 25%);
+    width: 300px;
+    height: 40vh;
+    background-color: #7EE081;
+    z-index: -2;
 }

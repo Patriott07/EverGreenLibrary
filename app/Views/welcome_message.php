@@ -3,7 +3,7 @@
  -->
 
 <!-- merender Header-tw.php -->
-<?= view('./component/header-bs') ?>
+<?= view('./component/header-tw') ?>
 
 
 <!-- Start Navbar -->
@@ -12,7 +12,7 @@
   <div class="container">
     <div class="flex items-center justify-between relative">
       <div class="px-4">
-        <a href="home" class="block py-4"><?= view('./component/NavbarWithLogo-bs') ?></a>
+        <a href="home" class="block py-4 px-5"><?= view('./component/NavbarWithLogo-bs') ?></a>
       </div>
       <div class="flex items-center px-4">
         <button id="hamburger" name="hamburger" type="button" class=" block absolute right-4">
@@ -54,4 +54,4 @@
 <!-- merender footer-tw.php -->
 <!-- <?php // view('./component/footer-tw') ?> -->
 <!-- merender footer-tw.php -->
-<?= view('./component/footer-bs') ?>
+<?= view('./component/footer-tw') ?>
