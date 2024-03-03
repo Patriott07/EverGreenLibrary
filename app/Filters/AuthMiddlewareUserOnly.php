@@ -6,6 +6,8 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
+use App\Libraries\Auth_lib;
+
 class AuthMiddlewareUserOnly implements FilterInterface
 {
     /**
@@ -49,6 +51,15 @@ class AuthMiddlewareUserOnly implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        //
+        $input = session('input');
+        $auth_lib = new Auth_lib();
+
+        if(isset($input['remember'])){
+            $auth_lib->set_cookie('email', $input['email'], 30);
+            $auth_lib->set_cookie('password', $auth_lib->textToHash($input['password']), 30);
+            $auth_lib->set_cookie('remember', 'ok', 3);
+        }
+        // dd($input);
+        return $request;
     }
 }

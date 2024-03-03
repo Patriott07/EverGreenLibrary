@@ -50,14 +50,20 @@ class AuthMiddlewareAdminOnly implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        $input = session('input_user');
+        
+        $input = session('input');
         $auth_lib = new Auth_lib();
 
         if(isset($input['remember'])){
+            session()->remove('email');
+            session()->remove('password');
             $auth_lib->set_cookie('email', $input['email'], 30);
             $auth_lib->set_cookie('password', $auth_lib->textToHash($input['password']), 30);
             $auth_lib->set_cookie('remember', 'ok', 3);
+            session()->remove('input_user');
         }
+
+        // dd($input);
         
         return $request;
     }
