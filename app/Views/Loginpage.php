@@ -15,6 +15,9 @@
                 EverGreen Library
             </div>
 
+
+            <!--  -->
+
             <!-- init to get error validation -->
             <?php validation_list_errors() ?>
 
@@ -50,15 +53,42 @@
                 </div>
             <?php } ?>
 
-            <form action="/auth/register" class="my-3 col-md-10 pb-5" method="post">
+
+
+            <form action="/auth/login" class="my-3 col-md-10 pb-5" method="post">
                 <?= csrf_field() ?>
+                <!-- Set cookie -->
+                <?php // Info echo get_cookie('email') 
+                ?>
+                <!-- Cookie data -->
+
                 <div class="mb-3">
+                    <?php  ?>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" value="<?= isset($input) ? $input['email'] : '' ?>">
+                    <input type="email" id="email" name="email" class="form-control" value="<?php if (isset($input)) {
+                                                                                                echo $input['email'];
+                                                                                            } else {
+                                                                                                if (!empty(get_cookie('email'))) {
+                                                                                                    echo get_cookie('email');
+                                                                                                } else {
+                                                                                                    echo '';
+                                                                                                }
+                                                                                            } ?>">
                 </div>
-                <div class="mb-3">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" value="<?= isset($input) ? $input['password'] : '' ?>">
+                <div class="mb-3 d-flex justify-content-between align-items-end">
+                    <div class="col-md-11">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control password-input" value="<?php if (isset($input)) {
+                                                                                                                echo $input['password'];
+                                                                                                            } else {
+                                                                                                                if (!empty(get_cookie('password'))) {
+                                                                                                                    echo $auth_lib->hashToText(get_cookie('password'));
+                                                                                                                }
+                                                                                                            } ?>">
+                    </div>
+                    <div class="w-fit-c">
+                        <img class="e" src="<?= base_url('./image/icon/eye-hide.png') ?>" alt="" id="handler-eye">
+                    </div>
                 </div>
 
                 <div class="mb-3 a-dash d-flex justify-content-between align-items-center">
@@ -71,16 +101,19 @@
                         </div>
                     </button>
                     <span class="">
-                        I am new here. i want <a href="/signin">Create acoount</a>
+                        I am new here. i want <a href="/signup">Create acoount</a>
                     </span>
                 </div>
 
-                <div class="form-check">
-                    <input style="background-color: #7EE081!important; width:20px!important; height: 20px!important" class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" <?php if (!empty(get_cookie('remember')) && get_cookie('remember') != null) { ?> checked <?php } ?> name="remember" value="1" style="background-color: #7EE081!important; width:20px!important; height: 20px!important" class="form-check-input me-2" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         Keep my data still fill the form
                     </label>
                 </div>
+
+
 
 
 

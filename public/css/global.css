@@ -110,6 +110,7 @@ label:active::before{
     font-size: 14px;
 }
 
+/* input style  */
 input.form-control{
     height: 45px;
     max-width: 415px;
@@ -129,6 +130,8 @@ input.form-control:focus{
     font-size: 14px!important;
     
 }
+
+/* link garis bawah */
 
 .a-dash a{
     position: relative;
@@ -157,6 +160,9 @@ input.form-control:focus{
     width: 0%;
 }
 
+
+/* Chip err */
+
 .err-form-chip{
     margin-right: 4px;
     margin-bottom: 4px;
@@ -168,6 +174,8 @@ input.form-control:focus{
     width: fit-content;
 }
 
+
+/* Chip suc */
 .suc-form-chip{
     margin-right: 4px;
     margin-bottom: 4px;
@@ -175,7 +183,7 @@ input.form-control:focus{
     border-radius: 10px;
     padding: 6px 10px;
     color: #2f2f2f;
-    background-color: #4AD34F;
+    background-color: #7EE081;
     width: fit-content;
 }
 

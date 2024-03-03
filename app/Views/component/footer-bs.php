@@ -123,6 +123,29 @@
 <!-- Script Boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<script>
+    const handler_eye = document.getElementById('handler-eye');
+    handler_eye.addEventListener('click', (e) => {
+        // console.log(e, handler_eye.getAttribute('src'));
+        const inputPass = document.getElementsByClassName('password-input');
+        if(handler_eye.getAttribute('src') == `<?= base_url('./image/icon/eye-hide.png') ?>`){
+
+            for (let i = 0; i < inputPass.length; i++) {
+                inputPass[i].setAttribute('type', 'text');
+            }
+            handler_eye.setAttribute('src', `<?= base_url('./image/icon/eye-open.png') ?>` )
+
+        }else{
+
+            for (let i = 0; i < inputPass.length; i++) {
+                inputPass[i].setAttribute('type', 'password');
+            }
+            handler_eye.setAttribute('src', `<?= base_url('./image/icon/eye-hide.png') ?>` )
+            
+        }
+    })
+</script>
 </body>
 
 </html>

@@ -50,7 +50,7 @@
                 </div>
             <?php } ?>
 
-            <form action="/auth/register" class="my-3 col-md-8" method="post">
+            <form action="/auth/register" class="my-3 col-md-10" method="post">
                 <?= csrf_field() ?>
                 <div class="mb-3">
                     <label for="name">Username</label>
@@ -60,13 +60,18 @@
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" class="form-control" value="<?= isset($input) ? $input['email'] : '' ?>">
                 </div>
-                <div class="mb-3">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" value="<?= isset($input) ? $input['password'] : '' ?>">
+                <div class="mb-3 d-flex justify-content-between align-items-end">
+                    <div class="col-md-11">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control password-input" value="<?= isset($input) ? $input['password'] : '' ?>">
+                    </div>
+                    <div class="w-fit-c">
+                        <img class="e" src="<?= base_url('./image/icon/eye-hide.png') ?>" alt="" id="handler-eye">
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="confirmpassword">Confirm Password</label>
-                    <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" value="<?= isset($input) ? $input['confirmpassword'] : '' ?>">
+                    <input type="password" id="confirmpassword" name="confirmpassword" class="form-control password-input" value="<?= isset($input) ? $input['confirmpassword'] : '' ?>">
                 </div>
 
                 <div class="mb-3 a-dash d-flex justify-content-between align-items-center">
@@ -79,7 +84,7 @@
                         </div>
                     </button>
                     <span class="">
-                        I have account <a href="/signin">Login</a>
+                        I have account. i want <a href="/signin">Login now</a>
                     </span>
                 </div>
 
