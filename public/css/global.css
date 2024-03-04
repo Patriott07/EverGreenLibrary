@@ -188,3 +188,66 @@ input.form-control:focus{
 }
 
 /* input checkbox */
+
+
+/* card-person */
+
+.card-person{
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    position: relative;
+    /* border: 1px solid black; */
+    transition: all 0.3s 0.2s;
+    background-position: center;
+    background-size: cover;
+}
+ 
+.card-person span, .card-person p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 18px;
+    background-color: #141414;
+    color: #fff;
+    padding: 6px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s 0.2s;
+}
+
+.card-person .person-description{
+    height: 0;
+    transition: all 0.3s 0.2s;
+    text-align: justify;
+}
+.card-person:hover .person-description{
+    height: 40%;
+    font-size: 14px;
+}
+
+/* hidden scroolbar */
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* swiper gallery */
+.swiper-2 {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+/* .swiper-2 .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-2 .swiper-slide img {
+    display: block;
+    width: 100%;
+  } */

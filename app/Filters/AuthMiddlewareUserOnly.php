@@ -59,7 +59,7 @@ class AuthMiddlewareUserOnly implements FilterInterface
             $auth_lib->set_cookie('password', $auth_lib->textToHash($input['password']), 30);
             $auth_lib->set_cookie('remember', 'ok', 3);
         }
-        // dd($input);
+        
         return $request;
     }
 }
