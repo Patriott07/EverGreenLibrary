@@ -141,6 +141,7 @@ class AuthController extends BaseController
 
         $user = new Users();
         $insert = $user->insert($request, false);
+        
         if ($insert) {
             // Handle jika sukses
             return view('Loginpage', [

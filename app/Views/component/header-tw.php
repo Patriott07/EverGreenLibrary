@@ -19,6 +19,9 @@
   <link rel="icon" type="image/x-icon" href="<?= base_url('./image/favicon.ico') ?>">
   <!-- tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- local css -->
+  <link rel="stylesheet" href="<?= base_url('./css/footer.css') ?>">
   <script>
     tailwind.config = {
       theme: {

@@ -5,6 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 // Contollers
 use App\Controllers\AuthController;
 use App\Controllers\Home;
+use App\Controllers\FeedbackLibraryController;
 
 
 // Middleware / filter
@@ -47,6 +48,7 @@ $routes->post('/auth/register', [AuthController::class, 'register']);
 $routes->post('/auth/login', [AuthController::class, 'login']);
 $routes->post('/auth/logout', [AuthController::class, 'logout']);
 
+$routes->post('/form/feedback/evergreen', [FeedbackLibraryController::class, 'post'], ['filter', AuthMiddlewareUserOnly::class]);
 /**
  * End 
  * */
