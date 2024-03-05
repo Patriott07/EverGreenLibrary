@@ -106,12 +106,13 @@
             </div>
 
           </div> -->
+
           <div class="swiper" id="swiper1">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper gap-4">
               <!-- Slides -->
               <div class="swiper-slide">
-                <div data-index="0" class="card-person grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
+                <div data-index="0" class="card-person  rounded-lg grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
                   <span>
                     Patriot Abdi Nuruzzaki
                   </span>
@@ -204,15 +205,20 @@
 
 <!-- Fitur -->
 <div class="mt-9 flex justify-center bg-green-400">
-    <div class="container md:w-10/12 p-16">
+    <div class="container md:w-10/12 px-16 pt-16">
       <div class="font-bold text-5xl ff1 text-color2">FITUR DI</div>
       <div class="font-bold text-9xl ff1 text-color2">EverGreen</div>
     </div>
 </div>
-<div class=" bg-green-400">
+<div class=" bg-green-400 pt-8 pb-16">
     <div class="container md:ml-[13%] w-screen">
-      <div class="font-bold text-5xl ff1 text-color2">FITUR DI</div>
-      <div class="font-bold text-9xl ff1 text-color2">EverGreen</div>
+     <div class="card-feature group flex w-[250px] h-[300px] bg-pureBlack hover:shadow-3xl hover:shadow-color1 hover:bg-pureBlack/90">
+       <div class="content text-sm bg-color1 group-hover:p-4 overflow-hidden">
+        <span class="text-2xl font-medium">#1</span>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, quaerat. Eaque in, odio autem assumenda laborum dicta velit tenetur, officia eos ipsa, tempora voluptatum repellendus nemo a! Reiciendis, sapiente saepe!
+       </div>
+        <h1 class="text-6xl text-center font-bold m-auto text-color1 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Hover me</h1>
+     </div>
     </div>
 </div>
 
@@ -222,7 +228,7 @@
   <div class="container md:w-10/12">
     <div class="swiper-2">
       <div class="swiper-wrapper">
-        <div class="swiper-slide w-96">
+        <div class="swiper-slide w-96 mb-8">
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </div>
         <div class="swiper-slide w-96">
@@ -238,7 +244,7 @@
           <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
         </div>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="text-end mt-8 text-pureBlack swiper-pagination"></div>
     </div>
   </div>
 </div>
