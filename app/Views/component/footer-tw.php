@@ -121,6 +121,12 @@
     </footer>
 </div>
 
+<!-- Flowbite script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<!-- Sisipkan script SweetAlert2 -->
+<script src="path/to/sweetalert2.js"></script>
+
+
 
 <script>
     var swiper = new Swiper(".swiper", {

@@ -19,9 +19,15 @@
   <link rel="icon" type="image/x-icon" href="<?= base_url('./image/favicon.ico') ?>">
   <!-- tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- flowbite -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
   <!-- local css -->
   <link rel="stylesheet" href="<?= base_url('./css/footer.css') ?>">
+
+  <!-- Sisipkan stylesheet SweetAlert2 -->
+  <link rel="stylesheet" href="path/to/sweetalert2.css">
+  
   <script>
     tailwind.config = {
       theme: {
@@ -50,4 +56,4 @@
   <title>Evergreen Library</title>
 </head>
 
-<body>
+<body class="scrool-smooth">

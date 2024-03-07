@@ -28,10 +28,13 @@ class AuthMiddlewareUserOnly implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // get session login
-        $authUser = session('auth');
+        // dd('kena middleware');
+        if (session()->has('auth')) {
+            $authUser = session('auth');
 
-        if ($authUser && $authUser['role_id'] == 2) {
-            return $request;
+            if($authUser['role_id'] == 2){
+                return $request; 
+            }
         }
 
         return redirect()->to('/signin');
@@ -60,6 +63,6 @@ class AuthMiddlewareUserOnly implements FilterInterface
             $auth_lib->set_cookie('remember', 'ok', 3);
         }
         
-        return $request;
+        return $response;
     }
 }

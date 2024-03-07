@@ -24,3 +24,8 @@ for (let i = 0; i < cardPerson.length; i++) {
         console.log(index);
     })
 }
+
+const messageBar = document.getElementById('message');
+messageBar.addEventListener('click', () => {
+    messageBar.classList.add('invisible');
+})

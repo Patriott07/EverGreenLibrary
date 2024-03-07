@@ -5,14 +5,36 @@
 <!-- merender Header-tw.php -->
 <?= view('./component/header-tw') ?>
 
+<!-- Notification -->
+
+<?php if (session()->has('suc')) { ?>
+
+  <div id="message" class="absolute right-10 cursor-pointer top-5 mt-2 px-6 py-4 bg-white rounded-lg shadow w-3/12 z-20">
+    <div class=" inline-flex items-center justify-between w-[100%]">
+      <div class="inline-flex items-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/893/893257.png" alt="Messages Icon" class="w-6 h-6 mr-3">
+        <h3 class="font-bold text-base text-gray-800">Messages</h3>
+      </div>
+      <p class="text-[10px] text-gray-500">
+        Click to hide
+      </p>
+    </div>
+    <p class="mt-1 text-sm">
+      <?= session('suc') ?>
+    </p>
+  </div>
+
+<?php } ?>
+
 
 <!-- Start Navbar -->
 
-<header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-  <div class="container">
+<!-- <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+  <div class="md:w-11/12 mx-auto">
     <div class="flex items-center justify-between relative">
       <div class="px-4">
-        <a href="home" class="block py-4 px-5"><?= view('./component/NavbarWithLogo-bs') ?></a>
+        <a href="home" class="block py-4 px-5"><?php //view('./component/NavbarWithLogo-bs') 
+                                                ?></a>
       </div>
       <div class="flex items-center px-4">
         <button id="hamburger" name="hamburger" type="button" class=" block absolute right-4">
@@ -24,13 +46,113 @@
     </div>
   </div>
 
-</header>
+</header> -->
 
 <!-- End Navbar -->
 
+<!-- Hero section -->
+<div class="flex bg-pureBlack h-[150vh] bg-blend-multiply bg-cover bg-fixed" style="background-image: url('https://uiii.ac.id/assets/images/1636690539-alfons-morales-YLSwjSy7stw-unsplash-2.jpg')">
+
+  <div class="md:w-10/12 mx-auto">
+    <!-- nav -->
+    <nav class="bg-transparent w-full md:px-4 sm:px-0 z-20 top-0 start-0 ">
+      <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <img src="<?= base_url('./image/logo-dark.png') ?>" class="" alt="Flowbite Logo">
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button type="submit" class="button-icon hover:shadow-2xl shadow-color4 bg-white flex justify-between mt-3 gap-2 items-center">
+            <div class="text-pureBlack font-medium ">
+              Sign in
+            </div>
+            <div class="icon">
+              <img src="<?= base_url('./image/icon/send.png') ?>" alt="" srcset="">
+            </div>
+          </button>
+          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-center hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul class="flex flex-col md:gap-3 p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">
+            <li>
+              <a href="#" class="block text-xm link-w-underline px-1 text-white" style="color: #fff!important" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="block text-xm link-w-underline px-1" style="color: #fff!important">About</a>
+            </li>
+            <li>
+              <a href="#" class="block text-xm link-w-underline px-1 " style="color: #fff!important">Services</a>
+            </li>
+            <li>
+              <a href="#" class="block text-xm link-w-underline px-1" style="color: #fff!important">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mt-8 flex justify-end">
+      <div class="md:w-5/12 text-color1 text-[18px]">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore illo libero corporis quia iusto amet recusandae sunt mollitia sint.
+        </p>
+        <a href="" class="inline link-w-underline mt-3 text-sm">Saya ingin baca sekarang
+        </a>
+      </div>
+    </div>
+
+    <!-- content -->
+
+    <div class="mt-3 flex justify-between items-end gap-6 group">
+      <div class="md:w-8/12 text-color1 text-[18px]">
+        <span class="text-[58px] font-bold">FIND NEW</span>
+        <span class="text-[110px] font-bold md:ms-2 transition-all duration-1000  bg-gradient-to-tr from-green-600 to-purple-700 text-transparent group-hover:bg-gradient-to-br group-hover:from-green-300 delay-150 bg-clip-text">BOOKS</span>
+        <div class="hover:opacity-50 transition-all duration-200 h-[350px] w-[100%] bg-top bg-fixed opacity-40 bg-blend-multiply" style="background-image: url('https://images.prismic.io/wellcomecollection/831aa0b9-4507-4ed3-b061-5e3ac58d2600_EP_000779_038_Full.jpg?w=1338&auto=compress%2Cformat&rect=0%2C0%2C4000%2C2250&q=50');">
+
+        </div>
+
+      </div>
+      <div class="md:w-4/12 text-color1 text-[18px]">
+        <div class="flex items-start justify-between gap-2">
+          <div class="w-fit">
+            <h1><span class="text-[58px] font-bold">IN</span></h1>
+            <h1><span class="text-[70px] font-bold">YOUR</span></h1>
+          </div>
+          <div class="w-fit">
+            <h1>
+              <span class="text-[100px] transition-all duration-500 group-hover:bg-gradient-to-br text-transparent font-bold md:ms-2 bg-clip-text bg-gradient-to-tr from-green-600 to-purple-700">LIFE</span>
+            </h1>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="flex md:mt-24 ">
+      <div class="md:w-11/12 mx-auto flex justify-between items-center">
+        <div class="w-fit text-[24px] text-color1">
+          <p class="font-medium text-[14px]">
+            Cirebon jakarta timur 12.
+          </p>
+        </div>
+        <div class="w-fit">
+          <a href="" class="inline link-w-underline mt-3 text-sm">Join Members Evergeen
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
 
 <!-- Start Section -->
-<section id="home" class="p-10 mx-8 mt-24">
+<!-- <section id="home" class="p-10 mx-8 mt-24">
   <div class="container">
     <div class="flex flex-wrap">
       <div class="w-full self-center px-4">
@@ -39,7 +161,7 @@
         <a href="#" class="text-base self-start py-3 px-4  text-white bg-emerald-600 font-semibold rounded-full hover:shadow-lg hover:bg-emerald-400">Jelajahi sekarang</a>
       </div>
     </div>
-    <!-- Menambahkan Image di sebelah kanan untuk deskop -->
+    Menambahkan Image di sebelah kanan untuk deskop 
     <div class="w-full self-end px-4">
       <div class="mt-10">
         <img src="" alt="">
@@ -47,10 +169,11 @@
     </div>
   </div>
 </section>
+-->
 
 
 <!-- about -->
-<div class="mt-9 flex justify-center">
+<div class="mt-9 flex justify-center" id="about">
   <div class="container md:w-10/12 py-4">
     <div class="text-center font-bold text-5xl mb-16">About</div>
     <div class="flex gap-4 justify-between items-center">
