@@ -14,7 +14,9 @@ class Book extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'title', 'publisher', 'publication_date', 'description', 'total_page', 'image', 'quantity'
+    ];
 
     protected bool $allowEmptyInserts = false;
 

@@ -6,10 +6,13 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Libraries\Auth_lib;
 use App\Models\Users;
+use App\Models\Book;
+use App\Models\Peminjaman;
 use CodeIgniter\I18n\Time;
 use CodeIgniter\Cookie\Cookie;
 use CodeIgniter\Cookie\CookieStore;
-
+use DateTime;
+use DateTimeZone;
 
 // $validation = \Config\Services::validation();
 class AuthController extends BaseController
@@ -55,6 +58,83 @@ class AuthController extends BaseController
 
     public function dashboardAdminPage()
     {
+        //get count (users,books,pemijaman, category)
+        //Books 3 data | title, penulis, total_page, quantity
+        //Pengguna 3 data | name, email, status, role
+        $data = [];
+        $data[] = $this->db->query('select * from countmember')->getResultArray();
+        $data[] = $this->db->query('select * from countbook')->getResultArray();
+        $data[] = $this->db->query('select * from countcheckoutbook')->getResultArray();
+        $data[] = $this->db->query('select * from countcategory')->getResultArray();
+
+        $result1 = [];
+        foreach($data as $fData){
+            $result1[] = $fData[0];
+        }
+        // get count (users,books,pemijaman, category) ||| Done
+
+
+        $MBook = new Book();
+        $MUser = new Users();
+
+        $q1 = $MBook->orderBy('id', 'desc')->findAll(3);
+        $q2 = $MUser->orderBy('id', 'desc')->findAll(3);
+        /**
+        * is Done
+        * //Books 3 data | title, penulis, total_page, quantity
+        * //Pengguna 3 data | name, email, status, role
+        */
+
+        // get feedback
+        $q3 = $this->db->query('SELECT * FROM getfeedbackindex');
+        $feedback_library = $q3->getResultArray();
+
+        //get Request,dipinjam, selesai dan Over deadline
+        $data = [];
+        $data[] = $this->db->query('Select * from countpeminjmanrequest')->getResultArray();
+        $data[] = $this->db->query('Select * from countpeminjamanDipinjam')->getResultArray();
+        $data[] = $this->db->query('Select * from countpeminjamanselesai')->getResultArray();
+
+        $date = $this->db->query('select * from checkdatepeminjaman')->getResultArray();
+        $now = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
+
+        $over_deadline = [];
+        foreach($date as $fDate){
+            if($now->format('Y-m-d') > $fDate['tgl_kembali']){
+                $over_deadline[] = $fDate;
+            }
+        }
+
+
+        $result2 = [];
+        foreach($data as $fData){
+            $result2[] = $fData[0];
+        }
+
+
+        // 3 data Last peminjaman and overdeadline
+        $collectionOver = [];
+        $i = 0;
+        foreach($date as $fData){
+            if($now->format('Y-m-d') > $fData['tgl_kembali']){
+                // $over_deadline[] = $fDate;
+                if($i <= 3){
+                    $collectionOver[] = $fData;
+                }
+            }
+            $i++;
+        }
+
+        $mPeminjaman = new Peminjaman();
+        $collectionLastPeminjaman = $mPeminjaman->orderBy('id', 'desc')->findAll(3);
+
+        // The most positive books 10
+        // The most Worst books 10
+
+        $positive_books = $this->db->query('select * from mostpositivebooks LIMIT 10')->getResultArray();
+        $worst_books = $this->db->query('select * from mostworstbooks LIMIT 10')->getResultArray();
+
+        
         if(session()->has('suc')){
             return view('Dashboard-admin', ['suc' => session()->getFlashdata('suc')]);
         }
@@ -80,6 +160,7 @@ class AuthController extends BaseController
         if(!$auth){
             return redirect()->with('err', 'Tidak dapat menemukan akun anda. Try again')->to('/signin');
         }
+
         session()->set('auth', $auth);
 
         if($auth['role_id'] == 1){

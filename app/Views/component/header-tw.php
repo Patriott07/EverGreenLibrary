@@ -8,7 +8,7 @@
 ?>
 
 <!doctype html>
-<html>
+<html class="">
 
 <head>
   <meta charset="utf-8">
@@ -19,6 +19,7 @@
   <link rel="icon" type="image/x-icon" href="<?= base_url('./image/favicon.ico') ?>">
   <!-- tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <!-- flowbite -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
@@ -30,6 +31,7 @@
   
   <script>
     tailwind.config = {
+      darkMode : 'class',
       theme: {
         extend: {
           colors: {
