@@ -7,13 +7,6 @@
         <div class="w-fit">
             <!-- init to get error validation -->
             <?php validation_list_errors() ?>
-
-            <?php
-            if (session()->has('input')) {
-                var_dump(session('input')['id']);
-            }
-            ?>
-
             <!-- if error -->
             <?php if (session()->has('err')) { ?>
                 <div class="d-flex flex-wrap">
@@ -50,15 +43,6 @@
             <form action="<?= session('url') ?>" class="my-3 md:w-10/12 pb-5" method="post" enctype="multipart/form-data">
                 <?= csrf_field() ?>
                 <!-- Set cookie -->
-                <?php // Info echo get_cookie('email') 
-                ?>
-                <!-- Cookie data -->
-
-                <?php if (session()->has('url') && session('url') === '/admin/books/') { ?>
-                    <!-- Tambahkan field hidden untuk menentukan metode PUT -->
-                    <input type="hidden" name="_method" value="PUT">
-                <?php } ?>
-                <?= session('url')?>
 
                 <div class="mb-3">
                     <label for="title">Title</label> <br>
@@ -91,6 +75,7 @@
                         <label for="Page">Page totals</label>
                         <input type="number" id="Page" name="total_pages" class="form-control w-96/2" value="<?= session()->has('input') ? session('input')['total_pages'] : old('total_pages') ?>">
                     </div>
+
                     <div class="mb-3">
                         <label for="Quantity">Quantity</label>
                         <input type="number" id="Quantity" name="quantity" class="form-control w-96/2" value="<?= session()->has('input') ? session('input')['quantity'] : old('quantity') ?>">
@@ -108,9 +93,7 @@
                     <button type="submit" class="rounded-md px-3 py-2 bg-pureBlack border-none text-white font-medium">
                         Submit
                     </button>
-                    <button type="reset" class="rounded-md px-3 py-2 bg-gray-200 border-none text-pureBlack font-medium">
-                        Reset
-                    </button>
+                    <input type="reset" value="Reset" class="rounded-md px-3 py-2 bg-gray-200 border-none text-pureBlack font-medium">
                 </div>
             </form>
         </div>

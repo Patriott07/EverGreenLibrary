@@ -142,10 +142,100 @@ class AuthController extends BaseController
     }
     public function dashboardUserPage($username)
     {
-        if(session()->has('suc')){
-            return view('Dashboard-user', ['suc' => session()->getFlashdata('suc')]);
+        // if(session()->has('suc')){
+        //     return view('Dashboard-user', ['suc' => session()->getFlashdata('suc')]);
+        // }
+
+        // Get navbar category
+        $allCateg = $this->db->query('select * from category_book')->getResultArray();
+        // dd($allCateg);
+        // End Get navbar category
+
+
+        if(!empty($this->request->getPostGet('categ'))){
+            $categ = $this->request->getPostGet('categ');
+
+            if(empty(session('filter'))){
+
+                // dd('select by only categ');
+                $book = $this->db->query("SELECT books.* FROM books,pivot_category,category_book WHERE pivot_category.id_book = books.id AND pivot_category.id_category = category_book.id AND category_book.name_category = '$categ'")->getResultArray();
+                // dd($bookTerbaru);
+                // $book = $bookTerbaru;
+            }
+            
+            if(session('filter') === 'new'){
+                // dd('select by categ and new');
+                $now = new  DateTime('now');
+                $targetTime = date_format($now->modify('-1months'), 'Y-m-d');
+        
+                $bookTerbaru = $this->db->query("SELECT books.* FROM books,category_book,pivot_category where pivot_category.id_book = books.id AND pivot_category.id_category = category_book.id AND publication_date > '$targetTime' AND category_book.name_category = '$categ' ORDER BY id DESC")->getResultArray();
+                // dd($bookTerbaru);
+                $book = $bookTerbaru;
+                
+                session()->remove('filter');
+            }
+            if(session('filter') === 'populer'){
+                
+                $bookPopuler = $this->db->query("SELECT books.*, Count(favorite.book_id) AS 'much' FROM books,favorite,users,category_book,pivot_category WHERE favorite.user_id = users.id AND favorite.book_id = books.id AND pivot_category.id_book = books.id AND pivot_category.id_category = category_book.id AND category_book.name_category = '$categ' GROUP BY favorite.book_id ORDER BY much DESC;")->getResultArray();
+               
+                $book = $bookPopuler;
+                session()->remove('filter');
+                
+            }
+            if(session('filter') === 'liked'){
+               
+                $bookLiked = $this->db->query("SELECT books.*, Count(favorite.book_id) AS 'much' FROM books,favorite,users,category_book,pivot_category WHERE favorite.user_id = users.id AND favorite.book_id = books.id AND pivot_category.id_category = category_book.id AND pivot_category.id_book = books.id AND category_book.name_category = '$categ' GROUP BY favorite.book_id ORDER BY much DESC;")->getResultArray();
+              
+                $book = $bookLiked;
+                session()->remove('filter');
+            }
+
         }
-        return view('Dashboard-user');
+        
+        // Get last book
+        if(empty($this->request->getPostGet())){
+            $lastBook = $this->db->query('SELECT * FROM `books` ORDER BY id DESC limit 9')->getResultArray();
+            // dd('kosong');
+            $book = $lastBook;
+        }
+
+        // Params terbaru
+        if($this->request->getPostGet('new') === 'true'){
+            $now = new  DateTime('now');
+            $targetTime = date_format($now->modify('-1months'), 'Y-m-d');
+
+            $bookTerbaru = $this->db->query("SELECT * FROM `books` where publication_date > '$targetTime' ORDER BY id DESC")->getResultArray();
+            // dd($bookTerbaru);
+            $book = $bookTerbaru;
+            session()->set('filter', 'new');
+
+        }
+        
+        // Params terpopuler
+        if($this->request->getPostGet('populer') === 'true'){
+           
+            $bookPopuler = $this->db->query("SELECT books.*, Count(*) AS 'much' from peminjaman, tb_detail_peminjaman, users, books where peminjaman.user_id = users.id AND tb_detail_peminjaman.peminjaman_id = peminjaman.id AND tb_detail_peminjaman.book_id = books.id GROUP BY tb_detail_peminjaman.book_id ORDER BY much DESC")->getResultArray();
+            // dd($bookPopuler);
+            $book = $bookPopuler;
+
+            session()->set('filter', 'populer');
+
+        }
+        
+        // Params paling disukai
+        if($this->request->getPostGet('liked') === 'true'){
+            $bookLiked = $this->db->query("SELECT books.*, Count(favorite.book_id) AS 'much' FROM books,favorite,users WHERE favorite.user_id = users.id AND favorite.book_id = books.id GROUP BY favorite.book_id ORDER BY much DESC")->getResultArray();
+            // dd($bookLiked);
+            $book = $bookLiked;
+
+            session()->set('filter', 'liked');
+
+        }
+
+        // dd($book, $allCateg);
+        $judul = $this->request->getPostGet('categ') ? 'Category: '. $this->request->getPostGet('categ') : 'Library'; 
+        // dd($judul);
+        return view('Dashboard-user', ['books' => $book, 'categ' => $allCateg, 'judul' => $judul ]);
     }
 
     public function login()
@@ -169,6 +259,7 @@ class AuthController extends BaseController
         else if($auth['role_id'] == 2){
             // dd('user');
             $name = strtolower(str_replace(' ','-',$auth['name']));
+            session()->set('name', $name);
             return redirect()->with('suc', 'Halo selamat datang! ' . $auth['name'])->to('/'.$name.'/dashboard');
         }
 
@@ -234,15 +325,6 @@ class AuthController extends BaseController
 
     public function debugCo()
     {
-    
-    //    $this->lib_auth->set_cookie('email', 'superadmin@gmail.com', 3);
-    //    $this->lib_auth->set_cookie('password', 'superadmin@gmail.com', 3);
-    // //    $email = str_replace('%40', '@', $this->lib_auth->get_cookie('email'));
-    // //    dd($email); 
-    //  // Mendapatkan semua cookie
-
-    
-    // dd($this->lib_auth->getAll_cookie(['email', 'password', 'testyanggada']));
     
         
     }

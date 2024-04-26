@@ -103,12 +103,13 @@
 
 
              <li id="disLogout">
-                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                 <form action="/auth/logout" method="post" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <?= csrf_field() ?>
                      <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
                      </svg>
-                     <span class="flex-1 ms-3 whitespace-nowrap">Sign Out</span>
-                 </a>
+                     <button type="submit" class="ms-3 text-sm whitespace-nowrap">Log Out</button>
+                 </form>
              </li>
          </ul>
      </div>
@@ -138,11 +139,11 @@
                 <div class="avatar w-fit">
                     <div class="flex items-end gap-4">
                         <div class="font-medium dark:text-white">
-                            <div><?= session()->has('auth') ? session('auth')['name'] : "" ?></div>
+                            <div>Hello, <?= session()->has('auth') ? session('auth')['name'] : "" ?></div>
                         </div>
-                        <div class="w-10 h-10 rounded-full bg-cover" style="background-image: url('https://plus.unsplash.com/premium_photo-1675130119373-61ada6685d63?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D')" alt="">
+                        <!-- <div class="w-10 h-10 rounded-full bg-cover" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm89mGblz3vzkR7sUetuFMM2IVDgkWmhJqVH6qEbgAGQ&s')" alt="">
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="text-end text-sm font-medium text-gray-400">
                         Admin | Evergreen Lib

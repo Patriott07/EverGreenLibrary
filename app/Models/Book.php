@@ -12,10 +12,10 @@ class Book extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
+    protected $useSoftDeletes   = true;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'title', 'publisher', 'publication_date', 'description', 'total_page', 'image', 'quantity'
+        'title', 'penulis','publisher', 'publication_date', 'description', 'total_pages', 'image', 'quantity', 'deleted_at'
     ];
 
     protected bool $allowEmptyInserts = false;

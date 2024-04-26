@@ -1,12 +1,6 @@
 <?= view('./component/header-tw') ?>
 <div class="gap-footer">
     <!-- modal -->
-    <!-- Modal toggle -->
-    <div class="flex justify-center m-5">
-        <button id="readProductButton" data-modal-target="readProductModal" data-modal-toggle="readProductModal" class="block text-black bg-orange-400 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="button">
-            Show read modal
-        </button>
-    </div>
 
     <!-- Main modal -->
     <div id="readProductModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
@@ -38,7 +32,6 @@
                     </div>
                 </div>
                 <div id="modal-image">
-
                 </div>
                 <dl>
                     <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Sinopsis</dt>
@@ -71,15 +64,14 @@
         </div>
     </div>
 
-
     <!-- Navbar -->
     <?= view('./component/NavbarAdminSlide') ?>
 
     <!-- splash component -->
-    <div id="splashScreen" class="splash h-[100vh] w-screen z-[50] bg-white fixed top-0 left-0 flex items-center flex-col justify-center">
-        <!-- <div id="box1" class="w-0 h-0 animation-rotate absolute z-[52] top-0 left-0 mx-auto bg-[#8364e8]/95 shadow-2xl transition-all duration-700 hover:w-screen hover:h-screen"></div> -->
+    <!-- <div id="splashScreen" class="splash h-[100vh] w-screen z-[50] bg-white fixed top-0 left-0 flex items-center flex-col justify-center">
+         <div id="box1" class="w-0 h-0 animation-rotate absolute z-[52] top-0 left-0 mx-auto bg-[#8364e8]/95 shadow-2xl transition-all duration-700 hover:w-screen hover:h-screen"></div> 
         <div id="box1" class="w-0 h-0 animation-rotate absolute z-[51] top-0 left-0 mx-auto bg-color4/80 shadow-2xl transition-all duration-700 hover:w-screen hover:h-screen"></div>
-        <!-- <div id="box2" class="w-0 h-0 animation-rotate absolute z-[51] bottom-0 right-0 mx-auto bg-[#96c6ea]/90 shadow-2xl transition-all duration-700 hover:w-screen hover:h-screen"></div> -->
+         <div id="box2" class="w-0 h-0 animation-rotate absolute z-[51] bottom-0 right-0 mx-auto bg-[#96c6ea]/90 shadow-2xl transition-all duration-700 hover:w-screen hover:h-screen"></div> 
         <div id="box2" class="w-0 h-0 animation-rotate absolute z-[51] bottom-0 right-0 mx-auto bg-[#96c6ea]/70 shadow-2xl transition-all duration-700 hover:w-screen hover:h-screen"></div>
         <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
         <div class="relative z-[53]">
@@ -88,7 +80,7 @@
             <h2 id="text1" class="font-bold text-center text-3xl translate-y-4 opacity-0 transition-all duration-300">Welcome, In Evergreen</h2>
             <h2 id="text2" class="font-bold text-center text-1xl transition-all duration-500 opacity-0">Bring your day to shine. Please wait. . .</h2>
         </div>
-    </div>
+    </div> -->
 
     <!-- script splash -->
     <script>
@@ -168,42 +160,20 @@
                 <path fill="#34a853" d="M8 3.1l1.4 2.2-1.6 1.1 1.3.3 2.8.6.6-2.7.4-1.4-1.8 1.1-2-3.3H6.9L4.3 5.3l1.7 1zM16 12l-2.7-4.3-1.7 1 2 3.3H11v-2l-3 3 3 3v-2h3.7zM2.4 12l1.4-2.3 1.7 1.1-.9-4.2-2.8.7-1.3.3 1.6 1L0 12l1.3 2H7v-2z" class="color444444 svgShape"></path>
             </svg>
         </a>
-
-
-
-
     </div>
-
-    <!-- seach engine -->
-    <!-- <div class="absolute left-8 top-8 mt-8">
-        <form class="max-w-md mx-auto min-w-1/2">
-            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-            <div class="relative">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                </div>
-                <input type="search" id="default-search" class=" min-w-[100%] p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-            </div>
-        </form>
-    </div> -->
 
     <div class="mt-16 container ms-auto bg-[#f4f4f4] p-8 rounded-l-[40px]">
         <!-- Jika sukses -->
         <?php
 
-        use App\Libraries\Auth_lib;
-
-        if (isset($suc)) { ?>
+        if (isset($suc) || session()->has('suc')) { ?>
             <div class="flex flex-wrap">
                 <!-- suc chip -->
                 <div class="suc-form-chip">
                     <div class="flex justify-around items-center fs14">
                         <img src="<?= base_url('./image/icon/success.png') ?>" alt="">
                         <div class="text fs14 ms-2">
-                            <?= $suc ?>
+                            <?= session('suc') ?>
                         </div>
                     </div>
                 </div>
@@ -298,7 +268,8 @@
             </div>
         </div>
     </div>
-
+    
+    <!-- filter by tanggal -->
     <div class="container ms-auto bg-[#f4f4f4] p-16 rounded-l-[40px]">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <div class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
@@ -308,46 +279,47 @@
                             <svg class="w-3 h-3 text-gray-500 dark:text-gray-400 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
                             </svg>
-                            Last 30 days
+                            Choose the time
                             <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                             </svg>
                         </button>
+
                         <!-- Dropdown menu -->
-                        <div id="dropdownRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
+                        <form action="" method="get" id="dropdownRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
                             <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                        <input id="filter-radio-example-1" type="radio" value="" name="filter-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <input id="filter-radio-example-1" type="radio" value="1" name="d" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-1" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last day</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                        <input checked="" id="filter-radio-example-2" type="radio" value="" name="filter-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <input id="filter-radio-example-2" type="radio" value="7" name="d" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-2" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last 7 days</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                        <input id="filter-radio-example-3" type="radio" value="" name="filter-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <input id="filter-radio-example-3" type="radio" value="30" name="d" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-3" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last 30 days</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                        <input id="filter-radio-example-4" type="radio" value="" name="filter-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="filter-radio-example-4" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last month</label>
+                                        <input id="filter-radio-example-5" type="radio" value="365" name="d" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        <label for="filter-radio-example-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last year</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                        <input id="filter-radio-example-5" type="radio" value="" name="filter-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="filter-radio-example-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last year</label>
+                                        <button id="filter-radio-example-5" type="submit" class="px-3 hover:text-white py-2 w-full text-left rounded-md font-medium bg-blue-400">Submit<button>
+                                                <!-- <label for="filter-radio-example-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last year</label> -->
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </form>
                     </div>
                     <a href="/admin/books/form" class="rounded-xl text-pureBlack font-medium cursor-pointer px-3 py-1 hover:bg-white">Insert Document</a>
                 </div>
@@ -363,11 +335,12 @@
                 </form>
             </div>
 
+            <!-- data -->
             <table class="w-full hover:shadow-2xl bg-white text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            id
+                            #
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Judul buku | Penulis
@@ -394,11 +367,12 @@
                 } else {
                 ?>
                     <tbody>
-                        <?php foreach ($data as $fData) {
+                        <?php
+                        $i = 1; foreach ($data as $fData) {
                         ?>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-color4/80 hover:translate-y-[-8px] hover:z-20 duration-500 transition-all hover:bg-color4/80 dark:hover:bg-gray-600">
                                 <td class="px-6 py-4">
-                                    <?= $fData['id'] ?>
+                                    <?= $i++ ?>
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     <?= $fData['title'] ?> | <?= $fData['penulis'] ?>
@@ -425,14 +399,17 @@
                                     <?= $fData['total_pages'] ?> Halaman | Tersisa <?= $fData['quantity'] ?>
                                 </td>
                                 <td class="px-6 py-4 flex justify-start items-center">
-                                    <a data-modal-target="readProductModal" data-modal-toggle="readProductModal"
-                                     onclick="handleDataModal(this,'/admin/books/form?a=e&obji=<?= $authLib->textToHash($fData['id']) ?>','')" data-modalphp="<?= htmlspecialchars(json_encode($fData)) ?>" class="font-medium hover:text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
+                                    <a data-modal-target="readProductModal" data-modal-toggle="readProductModal" onclick="handleDataModal(this,'/admin/books/form?a=e&obji=<?= $authLib->textToHash($fData['id']) ?>','')" data-modalphp="<?= htmlspecialchars(json_encode($fData)) ?>" class="font-medium hover:text-blue-600 dark:text-blue-500 hover:underline">Detail</a>
                                     <a href="/admin/books/form?a=e&obji=<?= $authLib->textToHash($fData['id']) ?>" class="font-medium hover:text-blue-600 dark:text-blue-500 hover:underline ms-3">Edit</a>
-                                    <a href="">
-                                        <svg class="w-6 h-6 text-gray-800 hover:text-red-600 transition-all duration-200 dark:text-white ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd" />
-                                        </svg>
-                                    </a>
+                                    <form action="/admin/books/delete" method="post">
+                                        <!-- form delete -->
+                                        <input type="text" value="<?= $fData['id'] ?>" name="id_book" hidden>
+                                        <button type="submit">
+                                            <svg class="w-6 h-6 text-gray-800 hover:text-red-600 transition-all duration-200 dark:text-white ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php
@@ -442,12 +419,13 @@
                 <?php
                 } ?>
                 <script>
-                    const handleDataModal = (e, linkEdit, linkDelete
-                    ) => {
+                    const handleDataModal = (e, linkEdit, linkDelete) => {
                         // console.log('data :', e.getAttribute('data-modalphp'));
                         const data = JSON.parse(e.getAttribute('data-modalphp'));
                         const bgurl = '<?= base_url('/image/uploaded/') ?>' + data.image;
-                        // const urlEdit = `/admin/books/form?a=e&obji=<?php // echo $authLib->textToHash(?>${data.id}<?php //)?>`;
+                        // const urlEdit = `/admin/books/form?a=e&obji=<?php // echo $authLib->textToHash(
+                                                                        ?>${data.id}<?php //)
+                                                                                    ?>`;
                         document.getElementById('modal-edit-act').setAttribute('href', linkEdit)
                         document.getElementById('modal-delete-act').setAttribute('href', linkDelete)
                         document.getElementById('modal-title').innerHTML = data.title;
@@ -476,35 +454,14 @@
                 </script>
 
             </table>
+
+
         </div>
     </div>
 
     <!-- Pagination -->
     <nav class="flex mt-4 mx-auto md:w-8/12 items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
-        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
-        <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
-            <li>
-                <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-            </li>
-            <li>
-                <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-            </li>
-            <li>
-                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-            </li>
-        </ul>
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing <span class="font-semibold text-gray-900 dark:text-white"><?= $countData ?></span> of <span class="font-semibold text-gray-900 dark:text-white"><?= $count ?></span> Document</span>
     </nav>
 
 
