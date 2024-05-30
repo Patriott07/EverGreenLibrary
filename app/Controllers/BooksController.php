@@ -25,6 +25,11 @@ class BooksController extends BaseController
 
     public function indexAdm()
     {
+
+        if(session('auth')['role_id']  == 2){ //mencegah agar user tidak masuk admin
+            return redirect()->to('/signin');
+        }
+
         $paramGET = $this->request->getGet();
         $book = new Book();
         $count = count($book->findAll());
@@ -82,6 +87,10 @@ class BooksController extends BaseController
 
     public function form()
     {
+        if(session('auth')['role_id']  == 2){ //mencegah agar user tidak masuk admin
+            return redirect()->to('/signin');
+        }
+
         $action = $this->request->getGet();
         session()->remove('input');
         session()->remove('url');
@@ -107,7 +116,7 @@ class BooksController extends BaseController
 
     public function create()
     {
-        // dd($this->request->getPost(), $this->request->getFile('image'));
+    
         if (!$this->validate([
             'title' => 'required'
         ])) {
@@ -118,7 +127,6 @@ class BooksController extends BaseController
         $request = $this->request->getPost();
         if ($file->isValid() && !$file->hasMoved()) {
             $now  = new DateTime('now', new DateTimeZone('Asia/Jakarta'));
-            // dd($now->format('Y-m-d'));
             $newNameFile = $now->format('Y-m-d') . "-" . str_replace('.', '-',  $file->getClientName()) . "-" . $file->getRandomName();
             // dd($newNameFile);
             $request['image'] = $newNameFile;
@@ -162,6 +170,7 @@ class BooksController extends BaseController
 
     public function deleted()
     {
+        
         $bookM = new Book();
         $book = $bookM->onlyDeleted()->findAll();
         // dd($book);

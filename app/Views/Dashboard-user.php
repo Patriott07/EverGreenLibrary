@@ -1,12 +1,14 @@
 <div class="bg-[#27272C]">
     <?= view('./component/header-tw') ?>
+    <?= session()->has('sessionerror') ? "<script>alert('You cant acces backpack page. you have been order book.')</script>" : '' ?>
 
     <div class="container gap-footer font-mono">
-
         <div class="flex container mx-auto items-start">
             <div class="md:w-2/12 min-h-[100vh] pt-[15vh] flex flex-col justify-center items-center" style="border-right: 1px solid gray;">
                 <div class="flex flex-col gap-2">
-                    <div class="text-[24px] text-green-400">Library</div>
+                    <a href="/<?= session('name') ?>/dashboard">
+                        <div class="text-[24px] text-green-400">Library</div>
+                    </a>
                     <ul class="list-none font-bold text-green-400/60 cursor-pointer">
                         <?php foreach ($categ as $data) {
                         ?>
@@ -20,16 +22,21 @@
                         } ?>
                     </ul>
                     <div class="text-[20px] text-green-400">
-                        <a href="/profile/dashboard" class="text-[20px] text-green-400" style="color: rgb(74, 222, 128)!important;">
+                        <a href="/profile/dashboard" class="text-[18px] text-green-400" style="color: rgb(74, 222, 128)!important;">
                             Account
                         </a>
                     </div>
                     <div class="text-[20px] text-green-400">
-                        <a href="/backpack/dashboard" class="text-[20px] text-green-400" style="color: rgb(74, 222, 128)!important;">
-                            My Backpack
+                        <a href="/backpack/dashboard" class="text-[18px] text-green-400" style="color: rgb(74, 222, 128)!important;">
+                            myBackpack
                         </a>
                     </div>
-                    <form action="/auth/logout" method="post" class="text-[20px] text-green-400">
+                    <div class="text-[20px] text-green-400">
+                        <a href="/my-order/dashboard" class="text-[18px] text-green-400" style="color: rgb(74, 222, 128)!important;">
+                            myOrder
+                        </a>
+                    </div>
+                    <form action="/auth/logout" method="post" class="text-[18px] text-green-400">
                         <button type="submit">Logout</button>
                     </form>
 
@@ -55,12 +62,25 @@
                     <?php foreach ($books as $data) {
                         $slug = strtolower(str_replace(' ', '-', $data['title']));
                     ?>
-                        <a href="/<?= session('name') ?>/book/<?= $data['id'] ?>/<?= $slug ?>">
+                     
+                        <a href="<?= base_url("/".session('name')."/book/$data[id]/$slug") ?>">
                             <div class="card hover:translate-y-[-12px] transition-all duration-300 group min-w-[250px] max-w-[250px] flex flex-col gap-3">
-                                <div class="min-h-[370px] max-h-[370px] bg-cover bg-center bg-[url('https://bukurepublika.id/wp-content/uploads/2020/02/cover-surat-cinta-bidadari-surga_depan-600x910.jpg')]">
-                                </div>
-                                <div class="title text-[18px] font-medium text-white"><?= $data['title']?> </div>
-                                <div class="title text-[14px] font-medium text-white group-hover:text-green-400"><?= $data['penulis']?></div>
+                                <?php if ($data['image'] == null) {
+                                ?>
+                                    <div class="min-h-[370px] max-h-[370px] bg-cover bg-center bg-black text-white font-semibold text-xl flex justify-center items-center">
+                                        No image avaible
+                                    </div>
+                                    
+                                    <?php
+                                } else {
+                                    ?>
+                                    <div class="min-h-[370px] max-h-[370px] bg-cover bg-center bg-[url('<?= base_url("./image/uploaded/" . $data['image']) ?>')]">
+                                    </div>
+
+                                <?php
+                                } ?>
+                                <div class="title text-[18px] font-medium text-white"><?= $data['title'] ?> </div>
+                                <div class="title text-[14px] font-medium text-white group-hover:text-green-400"><?= $data['penulis'] ?></div>
                             </div>
                         </a>
                     <?php

@@ -11,7 +11,7 @@
                         <hr class="opacity-50">
                         <br>
                     </div>
-                    <div class="text-xl font-semibold text-white mb-5">$34t1kksaiiiqyeoo002993</div>
+                    <div class="text-xl font-semibold text-white mb-5"><?= session('code') ?></div>
                     <div class="text-normal w-fit p-2 mx-auto font-semibold rounded-md bg-color5 text-white mb-8">Copy to my clipboard</div>
 
                     <div class="p-12 bg-white/20 mx-0 rounded-md text-white max-w-[650px] mb-6">
@@ -27,7 +27,7 @@
 
                     <div class="text-center flex flex-col gap-4">
                         <div class="text-2xl text-color4">Dont Forget to copy or capture the code.</div>
-                        <a href="/<?= session('name') ?>/dashboard">
+                        <a href="/my-order/dashboard">
                             <div class="text-[18px] text-white underline-offset-4" style="text-decoration: underline!important;">
                                 Bring me back
                             </div>

@@ -10,6 +10,7 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 
 use App\Filters\AuthMiddlewareUserOnly;
+use App\Filters\IsLoginMiddleware;
 class Filters extends BaseConfig
 {
     /**
@@ -26,7 +27,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
 
-        'auth' => AuthMiddlewareUserOnly::class
+        'auth' => AuthMiddlewareUserOnly::class,
     ];
 
     /**

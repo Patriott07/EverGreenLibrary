@@ -4,14 +4,17 @@
     <div class="container gap-footer font-mono">
 
         <div class="flex container mx-auto items-start">
-            <div class="md:w-2/12 min-h-[100vh] flex flex-col justify-center items-center" style="border-right: 1px solid gray;">
+
+            <div class="md:w-2/12 min-h-[100vh] pt-[15vh] flex flex-col justify-center items-center" style="border-right: 1px solid gray;">
                 <div class="flex flex-col gap-2">
-                    <div class="text-[24px] text-green-400">Library</div>
+                    <a href="/<?= session('name') ?>/dashboard">
+                        <div class="text-[24px] text-green-400">Library</div>
+                    </a>
                     <ul class="list-none font-bold text-green-400/60 cursor-pointer">
                         <?php foreach ($categ as $data) {
                         ?>
                             <li>
-                                <a style="color: #4ade80!important" href="?categ=<?= $data['name_category'] ?>">
+                                <a style="color: #4ade80!important" href="/<?= session('name') ?>/dashboard?categ=<?= $data['name_category'] ?>">
                                     <?= $data['name_category'] ?>
                                 </a>
                             </li>
@@ -20,11 +23,21 @@
                         } ?>
                     </ul>
                     <div class="text-[20px] text-green-400">
-                        <a href="/profile/dashboard" class="text-[20px] text-green-400" style="color: rgb(74, 222, 128)!important;">
+                        <a href="/profile/dashboard" class="text-[18px] text-green-400" style="color: rgb(74, 222, 128)!important;">
                             Account
                         </a>
                     </div>
-                    <form action="/auth/logout" method="post" class="text-[20px] text-green-400">
+                    <div class="text-[20px] text-green-400">
+                        <a href="/backpack/dashboard" class="text-[18px] text-green-400" style="color: rgb(74, 222, 128)!important;">
+                            myBackpack
+                        </a>
+                    </div>
+                    <div class="text-[20px] text-green-400">
+                        <a href="/my-order/dashboard" class="text-[18px] text-green-400" style="color: rgb(74, 222, 128)!important;">
+                            myOrder
+                        </a>
+                    </div>
+                    <form action="/auth/logout" method="post" class="text-[18px] text-green-400">
                         <button type="submit">Logout</button>
                     </form>
 
@@ -40,10 +53,22 @@
                 <!-- detail -->
                 <div class="flex gap-8">
                     <div class="w-fit">
-                        <div class="min-h-[360px] min-w-[250px] max-w-[250px] bg-cover mb-3 bg-center
-                        bg-[url('<?= base_url("./image/uploaded/" . $book[0]['image']) ?>')]">
+                        <?php if ($book[0]['image'] != '' || $book[0]['image'] != null) {
+                        ?>
 
-                        </div>
+                            <div class="min-h-[360px] min-w-[250px] max-w-[250px] bg-cover mb-3 bg-center
+                            bg-[url('<?= base_url("./image/uploaded/" . $book[0]['image']) ?>')]">
+
+                            </div>
+
+                        <?php
+                        } else {
+                        ?>
+                            <div class="min-h-[360px] min-w-[250px] max-w-[250px] bg-cover bg-center bg-black text-white font-semibold text-xl flex justify-center items-center">
+                                No image avaible
+                            </div>
+                        <?php
+                        } ?>
 
                         <div class="text-sm font-semibold text-green-400">
                             <?php foreach ($book[0]['category'] as $categ) {
@@ -262,7 +287,7 @@
 
                             </div>
                             <div>
-                                <input type="number" name="book_id" value="<?= $book[0]['id']?>" hidden>
+                                <input type="number" name="book_id" value="<?= $book[0]['id'] ?>" hidden>
                                 <label for="" class="text-green-400 mb-6"><?= strtoupper(session('name')) ?></label> <br>
                                 <textarea name="message" style="height: fit-content!important; background-color: #94a3b8!important; color:white!important; font-size:16px!important;" class="rounded-none text-[16px]" name="" id="" cols="100" rows="3" placeholder="Type something about this book.."></textarea>
                             </div>

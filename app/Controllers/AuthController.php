@@ -29,15 +29,6 @@ class AuthController extends BaseController
         helper('cookie');
     }
 
-    public function index()
-    {
-        $pass = 'password123';
-        dd($this->lib_auth->textToHash($pass));
-        $hash = $this->lib_auth->textToHash($pass);
-        dd($this->lib_auth->hashToText($hash));
-        // dd(textToHash());
-    }
-
     public function loginpage()
     {
         if(session()->has('suc')){
@@ -48,6 +39,7 @@ class AuthController extends BaseController
             $err = session()->getFlashdata('err');
             return view('Loginpage', ['auth_lib' => $this->lib_auth, 'err' => [$err], 'input' => session()->get('input')]);
         }
+
         return view('Loginpage', ['auth_lib' => $this->lib_auth ]);
     }
 
@@ -240,7 +232,7 @@ class AuthController extends BaseController
 
     public function login()
     {
-        $request = $this->request->getPost();
+        $request = $this->request->getPost(); //inputan form
 
         // kirim field input ke middleware untuk diproses cookie
         session()->set('input', $request);
@@ -250,7 +242,7 @@ class AuthController extends BaseController
         if(!$auth){
             return redirect()->with('err', 'Tidak dapat menemukan akun anda. Try again')->to('/signin');
         }
-
+        
         session()->set('auth', $auth);
 
         if($auth['role_id'] == 1){
@@ -282,6 +274,7 @@ class AuthController extends BaseController
             'confirmpassword' => 'required|matches[password]'
         ];
 
+        //name must be fill
         $message = [
             'name' => [
                 'required' => 'Isi nama anda.'

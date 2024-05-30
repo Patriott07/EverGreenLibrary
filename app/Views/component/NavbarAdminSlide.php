@@ -132,7 +132,7 @@
             <img src="<?= base_url('./image/logo-large.png') ?>" alt="">
             <div class="flex w-full justify-between items-end">
                 <div class="mx-auto collection-link flex gap-16 justify-around text-[20px] font-medium text-color4">
-                    <a href="" class="w-fit">Peminjaman</a>
+                    <a href="/admin/peminjaman" class="w-fit">Peminjaman</a>
                     <a href="/admin/books" class="w-fit">Books</a>
                     <a href="" class="w-fit">Pengguna</a>
                 </div>

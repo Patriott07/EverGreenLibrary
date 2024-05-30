@@ -1,0 +1,11 @@
+Admin users : 
+Email : fatimah@gmail.com
+pw : fatimah123
+
+Users : 
+Email : Userx0_x1@gmail.com
+pw : user12345
+
+if(session('auth')['role_id']  == 2){ //mencegah agar user tidak masuk admin
+            return redirect()->to('/signin');
+        }

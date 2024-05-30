@@ -27,28 +27,6 @@
 <?php } ?>
 
 
-<!-- Start Navbar -->
-
-<!-- <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-  <div class="md:w-11/12 mx-auto">
-    <div class="flex items-center justify-between relative">
-      <div class="px-4">
-        <a href="home" class="block py-4 px-5"><?php //view('./component/NavbarWithLogo-bs') 
-                                                ?></a>
-      </div>
-      <div class="flex items-center px-4">
-        <button id="hamburger" name="hamburger" type="button" class=" block absolute right-4">
-          <span class="w-[30px] h-[2px] my-2 block bg-emerald-900"></span>
-          <span class="w-[30px] h-[2px] my-2 block bg-emerald-900"></span>
-          <span class="w-[30px] h-[2px] my-2 block bg-emerald-900"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-</header> -->
-
-<!-- End Navbar -->
 
 <!-- Hero section -->
 <div class="flex bg-pureBlack h-[150vh] bg-blend-multiply bg-cover bg-fixed" style="background-image: url('https://uiii.ac.id/assets/images/1636690539-alfons-morales-YLSwjSy7stw-unsplash-2.jpg')">
@@ -59,14 +37,14 @@
       <div class="flex flex-wrap items-center justify-between mx-auto p-4">
         <img src="<?= base_url('./image/logo-dark.png') ?>" class="" alt="Flowbite Logo">
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button type="submit" class="button-icon hover:shadow-2xl shadow-color4 bg-white flex justify-between mt-3 gap-2 items-center">
+          <a href="/signin" type="submit" class="button-icon hover:shadow-2xl shadow-color4 bg-white flex justify-between mt-3 gap-2 items-center">
             <div class="text-pureBlack font-medium ">
               Sign in
             </div>
             <div class="icon">
               <img src="<?= base_url('./image/icon/send.png') ?>" alt="" srcset="">
             </div>
-          </button>
+          </a>
           <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -77,16 +55,19 @@
         <div class="items-center justify-center hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
           <ul class="flex flex-col md:gap-3 p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 ">
             <li>
-              <a href="#" class="block text-xm link-w-underline px-1 text-white" style="color: #fff!important" aria-current="page">Home</a>
+              <a href="#home" class="block text-xm link-w-underline px-1 text-white" style="color: #fff!important" aria-current="page">Home</a>
             </li>
             <li>
               <a href="#about" class="block text-xm link-w-underline px-1" style="color: #fff!important">About</a>
             </li>
             <li>
-              <a href="#" class="block text-xm link-w-underline px-1 " style="color: #fff!important">Services</a>
+              <a href="#fiture" class="block text-xm link-w-underline px-1 " style="color: #fff!important">Fiture</a>
             </li>
             <li>
-              <a href="#" class="block text-xm link-w-underline px-1" style="color: #fff!important">Contact</a>
+              <a href="#gallery" class="block text-xm link-w-underline px-1" style="color: #fff!important">Gallery</a>
+            </li>
+            <li>
+              <a href="#feedback" class="block text-xm link-w-underline px-1" style="color: #fff!important">Feedback</a>
             </li>
           </ul>
         </div>
@@ -96,9 +77,9 @@
     <div class="mt-8 flex justify-end">
       <div class="md:w-5/12 text-color1 text-[18px]">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore illo libero corporis quia iusto amet recusandae sunt mollitia sint.
+         Evergreen Library adalah situs untuk mendapatkan buku terbaru dengan mudah dan cepat. Jadikan setiap momenmu, momen bersama kami.
         </p>
-        <a href="" class="inline link-w-underline mt-3 text-sm">Saya ingin baca sekarang
+        <a href="/signin" class="inline link-w-underline mt-3 text-sm">Saya ingin baca sekarang
         </a>
       </div>
     </div>
@@ -139,7 +120,7 @@
           </p>
         </div>
         <div class="w-fit">
-          <a href="" class="inline link-w-underline mt-3 text-sm">Join Members Evergeen
+          <a href="/signup" class="inline link-w-underline mt-3 text-sm">Join Members Evergeen
           </a>
         </div>
       </div>
@@ -235,17 +216,6 @@
             <div class="swiper-wrapper gap-4">
               <!-- Slides -->
               <div class="swiper-slide">
-                <div data-index="0" class="card-person  rounded-lg grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
-                  <span>
-                    Patriot Abdi Nuruzzaki
-                  </span>
-                  <p class="person-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae dolorum explicabo eveniet quidem reiciendis maxime suscipit velit dolores minima?
-                  </p>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
                 <div data-index="0" class="card-person grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
                   <span>
                     Patriot Abdi Nuruzzaki
@@ -259,7 +229,7 @@
               <div class="swiper-slide">
                 <div data-index="0" class="card-person grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
                   <span>
-                    Patriot Abdi Nuruzzaki
+                    Jahdan Pandita
                   </span>
                   <p class="person-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae dolorum explicabo eveniet quidem reiciendis maxime suscipit velit dolores minima?
@@ -270,7 +240,7 @@
               <div class="swiper-slide">
                 <div data-index="0" class="card-person grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
                   <span>
-                    Patriot Abdi Nuruzzaki
+                    Ang Badarudin
                   </span>
                   <p class="person-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae dolorum explicabo eveniet quidem reiciendis maxime suscipit velit dolores minima?
@@ -281,7 +251,7 @@
               <div class="swiper-slide">
                 <div data-index="0" class="card-person grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
                   <span>
-                    Patriot Abdi Nuruzzaki
+                    Rismawati Wahyu H
                   </span>
                   <p class="person-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae dolorum explicabo eveniet quidem reiciendis maxime suscipit velit dolores minima?
@@ -292,7 +262,7 @@
               <div class="swiper-slide">
                 <div data-index="0" class="card-person grayscale hover:grayscale-0" style="background-image: url('https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D');">
                   <span>
-                    Patriot Abdi Nuruzzaki
+                    Nazwa Cantika
                   </span>
                   <p class="person-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae dolorum explicabo eveniet quidem reiciendis maxime suscipit velit dolores minima?
@@ -300,6 +270,7 @@
 
                 </div>
               </div>
+              
             </div>
             <!-- If we need pagination -->
             <!-- <div class="swiper-pagination"></div> -->
@@ -393,8 +364,8 @@
     <div class="md:w-10/12 mx-auto">
       <!-- row1 -->
       <div class="flex gap-[24px] mb-[24px]">
-        <div class="w-8/12 bg-gray-400 h-[200px]"></div>
-        <div class="w-4/12 bg-gray-400 h-[200px]"></div>
+        <div class="w-8/12 bg-gray-400 h-[500px] bg-[url('https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1430&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center"></div>
+        <div class="w-4/12 bg-gray-400 h-[500px] bg-[url('https://images.unsplash.com/photo-1555116505-38ab61800975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxpYnJhcnl8ZW58MHwxfDB8fHww')] bg-cover bg-center"></div>
       </div>
       <!-- row2 -->
       <div class="flex gap-[24px] mb-[24px] group">
@@ -402,19 +373,19 @@
           <h2 class="text-7xl font-medium">Our Library</h2>
           <img src="<?= base_url('./image/icon/up_64_black.png') ?>" alt="" class="mt-4 group-hover:pt-8 duration-400 transition-all">
         </div>
-        <div class="w-5/12 bg-gray-400 h-[400px]"></div>
-        <div class="w-4/12 bg-gray-400 h-[400px]"></div>
+        <div class="w-5/12 bg-gray-400 h-[400px] bg-[url('https://images.unsplash.com/photo-1568667256531-7d5ac92eaa7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxpYnJhcnl8ZW58MHwxfDB8fHww')] bg-center bg-cover"></div>
+        <div class="w-4/12 bg-gray-400 h-[400px] bg-[url('https://images.unsplash.com/photo-1476081718509-d5d0b661a376?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxpYnJhcnl8ZW58MHwxfDB8fHww')] bg-center bg-cover"></div>
       </div>
       <!-- row3 -->
       <div class="flex gap-[24px] mb-[24px]">
-        <div class="w-4/12 bg-gray-400 h-[200px]"></div>
-        <div class="w-8/12 bg-gray-400 h-[200px]"></div>
+        <div class="w-4/12 bg-gray-400 h-[400px] bg-cover bg-center bg-[url('https://plus.unsplash.com/premium_photo-1681681082129-1b81d47b28fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGxpYnJhcnl8ZW58MHwxfDB8fHww')]"></div>
+        <div class="w-8/12 bg-gray-400 h-[400px] bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1544185310-0b3cf501672b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGxpYnJhcnl8ZW58MHwxfDB8fHww')]"></div>
       </div>
       <!-- row4 -->
       <div class="flex gap-[24px] mb-[24px]">
-        <div class="w-4/12 bg-gray-400 h-[200px]"></div>
-        <div class="w-4/12 bg-gray-400 h-[200px]"></div>
-        <div class="w-4/12 bg-gray-400 h-[200px]"></div>
+        <div class="w-4/12 bg-gray-400 h-[300px] bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1595315342809-fa10945ed07c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGxpYnJhcnl8ZW58MHwxfDB8fHww')]"></div>
+        <div class="w-4/12 bg-gray-400 h-[300px] bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1564910443496-5fd2d76b47fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGxpYnJhcnl8ZW58MHwxfDB8fHww')]"></div>
+        <div class="w-4/12 bg-gray-400 h-[300px] bg-cover bg-center bg-[url('https://plus.unsplash.com/premium_photo-1661964081818-32d09be259c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzQxfHxsaWJyYXJ5fGVufDB8MXwwfHx8MA%3D%3D')]"></div>
       </div>
     </div>
   </div>
@@ -423,19 +394,19 @@
       <div class="swiper-2">
         <div class="swiper-wrapper">
           <div class="swiper-slide w-96 mb-8">
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+            <img src="https://images.unsplash.com/photo-1643981816389-5a637f803b18?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzc4fHxsaWJyYXJ5fGVufDB8MXwwfHx8MA%3D%3D" />
           </div>
           <div class="swiper-slide w-96">
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <img src="https://images.unsplash.com/photo-1571074995607-2a845a372d40?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzc5fHxsaWJyYXJ5fGVufDB8MXwwfHx8MA%3D%3D" />
           </div>
           <div class="swiper-slide w-96">
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            <img src="https://images.unsplash.com/photo-1619448473282-bdcea8020cdd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzk1fHxsaWJyYXJ5fGVufDB8MXwwfHx8MA%3D%3D" />
           </div>
           <div class="swiper-slide w-96">
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+            <img src="https://images.unsplash.com/photo-1598431275159-816fed9c4191?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzk2fHxsaWJyYXJ5fGVufDB8MXwwfHx8MA%3D%3D" />
           </div>
           <div class="swiper-slide w-96">
-            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+            <img src="https://images.unsplash.com/photo-1566314748936-ad5426525f3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDA5fHxsaWJyYXJ5fGVufDB8MXwwfHx8MA%3D%3D" />
           </div>
         </div>
         <div class="text-end mt-8 text-pureBlack swiper-pagination"></div>
